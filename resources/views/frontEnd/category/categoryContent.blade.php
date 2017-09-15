@@ -222,105 +222,48 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="col-md-4 product-men no-pad-men">
-                <div class="men-pro-item simpleCart_shelfItem">
-                    <div class="men-thumb-item">
-                        <img src="{{ asset('public/frontEnd/') }}/images/ep2.png" alt="" class="pro-image-front">
-                        <img src="{{ asset('public/frontEnd/') }}/images/ep2.png" alt="" class="pro-image-back">
-                        <div class="men-cart-pro">
-                            <div class="inner-men-cart-pro">
-                                <a href="single.html" class="link-product-add-cart">Quick View</a>
-                            </div>
-                        </div>
-                        <span class="product-new-top">New</span>
+            <div class="sap_tabs">
+                <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
 
-                    </div>
-                    <div class="item-info-product ">
-                        <h4><a href="single.html">Watches</a></h4>
-                        <div class="info-product-price">
-                            <span class="item_price">$45.99</span>
-                            <del>$69.71</del>
-                        </div>
-                        <a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 product-men no-pad-men">
-                <div class="men-pro-item simpleCart_shelfItem">
-                    <div class="men-thumb-item">
-                        <img src="{{ asset('public/frontEnd/') }}/images/a2.png" alt="" class="pro-image-front">
-                        <img src="{{ asset('public/frontEnd/') }}/images/a2.png" alt="" class="pro-image-back">
-                        <div class="men-cart-pro">
-                            <div class="inner-men-cart-pro">
-                                <a href="single.html" class="link-product-add-cart">Quick View</a>
-                            </div>
-                        </div>
-                        <span class="product-new-top">New</span>
+                    <div class="resp-tabs-container">
 
-                    </div>
-                    <div class="item-info-product ">
-                        <h4><a href="single.html">Blazers</a></h4>
-                        <div class="info-product-price">
-                            <span class="item_price">$45.99</span>
-                            <del>$69.71</del>
+                            @foreach($publishedCategoryProducts as $publishedCategoryProduct)
+                                <div class="col-md-4 product-men">
+                                    <div class="men-pro-item simpleCart_shelfItem">
+                                        <div class="men-thumb-item">
+                                            <img src="{{ asset($publishedCategoryProduct->productImage) }}" alt="" class="pro-image-front" height="200" width="200">
+                                            <img src="{{ asset($publishedCategoryProduct->productImage) }}" alt="" class="pro-image-back" height="200" width="200">
+                                            <div class="men-cart-pro">
+                                                <div class="inner-men-cart-pro">
+                                                    <a href="{{ url('/product-details/'.$publishedCategoryProduct->id) }}" class="link-product-add-cart">Quick View</a>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="item-info-product ">
+                                            <h4><a href=" {{ url('/product-details/'.$publishedCategoryProduct->id) }}">{{ $publishedCategoryProduct->productName }}</a></h4>
+                                            <div class="info-product-price">
+                                                <span class="item_price">BDT {{ $publishedCategoryProduct->productPrice }} </span>
+                                            </div>
+                                            <a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <div class="clearfix"></div>
                         </div>
-                        <a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 product-men no-pad-men">
-                <div class="men-pro-item simpleCart_shelfItem">
-                    <div class="men-thumb-item">
-                        <img src="{{ asset('public/frontEnd/') }}/images/mw2.png" alt="" class="pro-image-front">
-                        <img src="{{ asset('public/frontEnd/') }}/images/mw2.png" alt="" class="pro-image-back">
-                        <div class="men-cart-pro">
-                            <div class="inner-men-cart-pro">
-                                <a href="single.html" class="link-product-add-cart">Quick View</a>
-                            </div>
-                        </div>
-                        <span class="product-new-top">New</span>
 
-                    </div>
-                    <div class="item-info-product ">
-                        <h4><a href="single.html">Shirts</a></h4>
-                        <div class="info-product-price">
-                            <span class="item_price">$45.99</span>
-                            <del>$69.71</del>
-                        </div>
-                        <a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>
-                    </div>
+
+
+
                 </div>
             </div>
 
-            <div class="clearfix"></div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="single-pro">
-            @foreach($publishedCategoryProducts as $publishedCategoryProduct)
-            <div class="col-md-3 product-men">
-                <div class="men-pro-item simpleCart_shelfItem">
-                    <div class="men-thumb-item">
-                        <img src="{{ asset($publishedCategoryProduct->productImage) }}" alt="" class="pro-image-front">
-                        <img src="{{ asset($publishedCategoryProduct->productImage) }}" alt="" class="pro-image-back">
-                        <div class="men-cart-pro">
-                            <div class="inner-men-cart-pro">
-                                <a href="single.html" class="link-product-add-cart">Quick View</a>
-                            </div>
-                        </div>
-                        <span class="product-new-top">New</span>
-                    </div>
-                    <div class="item-info-product ">
-                        <h4><a href="single.html">{{ $publishedCategoryProduct->productName }}</a></h4>
-                        <div class="info-product-price">
-                            <span class="item_price">BDT {{ $publishedCategoryProduct->productPrice }}</span>
-                        </div>
-                        <a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-           @endforeach
-            <div class="clearfix"></div>
-        </div>
+
+
+
+
+
         <div class="pagination-grid text-right">
             <ul class="pagination paging">
                 <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
