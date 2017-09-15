@@ -237,7 +237,7 @@
 
                     </div>
                     <div class="item-info-product ">
-                        <h4><a href="single.html">Watches</a></h4>
+                        <h4><a href="{{ url('/product-details/'.$publishedCategoryProduct->id) }}">Watches</a></h4>
                         <div class="info-product-price">
                             <span class="item_price">BDT {{ $publishedCategoryProduct->productPrice }}</span>
                             <del>BDT {{ $publishedCategoryProduct->productPrice }}</del>
