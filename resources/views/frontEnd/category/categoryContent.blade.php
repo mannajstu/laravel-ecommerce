@@ -190,107 +190,64 @@
                                 });
                             });
                 </script>
-                <div  id="top" class="callbacks_container">
-                    <ul class="rslides" id="slider3">
-                        <li>
-                            <img class="img-responsive" src="{{ asset('public/frontEnd/') }}/images/men1.jpg" alt=" "/>
-                        </li>
-                        <li>
-                            <img class="img-responsive" src="{{ asset('public/frontEnd/') }}/images/men2.jpg" alt=" "/>
-                        </li>
-                        <li>
-                            <img class="img-responsive" src="{{ asset('public/frontEnd/') }}/images/men1.jpg" alt=" "/>
-                        </li>
-                        <li>
-                            <img class="img-responsive" src="{{ asset('public/frontEnd/') }}/images/men2.jpg" alt=" "/>
-                        </li>
-                    </ul>
-                </div>
+                {{--<div  id="top" class="callbacks_container">--}}
+                    {{--<ul class="rslides" id="slider3">--}}
+                        {{--<li>--}}
+                            {{--<img class="img-responsive" src="{{ asset('public/frontEnd/') }}/images/men1.jpg" alt=" "/>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<img class="img-responsive" src="{{ asset('public/frontEnd/') }}/images/men2.jpg" alt=" "/>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<img class="img-responsive" src="{{ asset('public/frontEnd/') }}/images/men1.jpg" alt=" "/>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<img class="img-responsive" src="{{ asset('public/frontEnd/') }}/images/men2.jpg" alt=" "/>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
                 <div class="clearfix"></div>
             </div>
-            <div class="men-wear-bottom">
-                <div class="col-sm-4 men-wear-left">
-                    <img class="img-responsive" src="{{ asset('public/frontEnd/') }}/images/men3.jpg" alt=" " />
-                </div>
-                <div class="col-sm-8 men-wear-right">
-                    <h4>Exclusive Men's Collections</h4>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
-                        ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-                        odit aut fugit. </p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
+            {{--<div class="men-wear-bottom">--}}
+                {{--<div class="col-sm-4 men-wear-left">--}}
+                    {{--<img class="img-responsive" src="{{ asset('public/frontEnd/') }}/images/men3.jpg" alt=" " />--}}
+                {{--</div>--}}
+                {{--<div class="col-sm-8 men-wear-right">--}}
+                    {{--<h4>Exclusive Men's Collections</h4>--}}
+                    {{--<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem --}}
+                        {{--accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae --}}
+                        {{--ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt--}}
+                        {{--explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut--}}
+                        {{--odit aut fugit. </p>--}}
+                {{--</div>--}}
+                {{--<div class="clearfix"></div>--}}
+            {{--</div>--}}
+            @foreach($publishedCategoryProducts as $publishedCategoryProduct)
             <div class="col-md-4 product-men no-pad-men">
                 <div class="men-pro-item simpleCart_shelfItem">
                     <div class="men-thumb-item">
-                        <img src="{{ asset('public/frontEnd/') }}/images/ep2.png" alt="" class="pro-image-front">
-                        <img src="{{ asset('public/frontEnd/') }}/images/ep2.png" alt="" class="pro-image-back">
+                        <img src="{{ asset($publishedCategoryProduct->productImage) }}" alt="" class="pro-image-front">
+                        <img src="{{ asset($publishedCategoryProduct->productImage) }}" alt="" class="pro-image-back">
                         <div class="men-cart-pro">
                             <div class="inner-men-cart-pro">
-                                <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                <a href="{{ url('/product-details/'.$publishedCategoryProduct->id) }}" class="link-product-add-cart">Quick View</a>
                             </div>
                         </div>
-                        <span class="product-new-top">New</span>
+                        {{--<span class="product-new-top">New</span>--}}
 
                     </div>
                     <div class="item-info-product ">
                         <h4><a href="single.html">Watches</a></h4>
                         <div class="info-product-price">
-                            <span class="item_price">$45.99</span>
-                            <del>$69.71</del>
+                            <span class="item_price">BDT {{ $publishedCategoryProduct->productPrice }}</span>
+                            <del>BDT {{ $publishedCategoryProduct->productPrice }}</del>
                         </div>
                         <a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>									
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 product-men no-pad-men">
-                <div class="men-pro-item simpleCart_shelfItem">
-                    <div class="men-thumb-item">
-                        <img src="{{ asset('public/frontEnd/') }}/images/a2.png" alt="" class="pro-image-front">
-                        <img src="{{ asset('public/frontEnd/') }}/images/a2.png" alt="" class="pro-image-back">
-                        <div class="men-cart-pro">
-                            <div class="inner-men-cart-pro">
-                                <a href="single.html" class="link-product-add-cart">Quick View</a>
-                            </div>
-                        </div>
-                        <span class="product-new-top">New</span>
+            @endforeach
 
-                    </div>
-                    <div class="item-info-product ">
-                        <h4><a href="single.html">Blazers</a></h4>
-                        <div class="info-product-price">
-                            <span class="item_price">$45.99</span>
-                            <del>$69.71</del>
-                        </div>
-                        <a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>									
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 product-men no-pad-men">
-                <div class="men-pro-item simpleCart_shelfItem">
-                    <div class="men-thumb-item">
-                        <img src="{{ asset('public/frontEnd/') }}/images/mw2.png" alt="" class="pro-image-front">
-                        <img src="{{ asset('public/frontEnd/') }}/images/mw2.png" alt="" class="pro-image-back">
-                        <div class="men-cart-pro">
-                            <div class="inner-men-cart-pro">
-                                <a href="single.html" class="link-product-add-cart">Quick View</a>
-                            </div>
-                        </div>
-                        <span class="product-new-top">New</span>
-
-                    </div>
-                    <div class="item-info-product ">
-                        <h4><a href="single.html">Shirts</a></h4>
-                        <div class="info-product-price">
-                            <span class="item_price">$45.99</span>
-                            <del>$69.71</del>
-                        </div>
-                        <a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>									
-                    </div>
-                </div>
-            </div>
 
             <div class="clearfix"></div>
         </div>
