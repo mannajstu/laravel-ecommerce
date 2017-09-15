@@ -222,31 +222,29 @@
                 {{--</div>--}}
                 {{--<div class="clearfix"></div>--}}
             {{--</div>--}}
-            @foreach($publishedCategoryProducts as $publishedCategoryProduct)
-            <div class="col-md-4 product-men no-pad-men">
-                <div class="men-pro-item simpleCart_shelfItem">
-                    <div class="men-thumb-item">
-                        <img src="{{ asset($publishedCategoryProduct->productImage) }}" alt="" class="pro-image-front">
-                        <img src="{{ asset($publishedCategoryProduct->productImage) }}" alt="" class="pro-image-back">
-                        <div class="men-cart-pro">
-                            <div class="inner-men-cart-pro">
-                                <a href="{{ url('/product-details/'.$publishedCategoryProduct->id) }}" class="link-product-add-cart">Quick View</a>
-                            </div>
-                        </div>
-                        {{--<span class="product-new-top">New</span>--}}
 
+                <div class="resp-tabs-container">
+                    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+                        @foreach($publishedCategoryProducts as $publishedCategoryProduct)
+                            <div class="col-md-3 product-men">
+                                <div class="men-pro-item simpleCart_shelfItem">
+
+                                    <div class="item-info-product ">
+                                        <h4><a href=" {{ url('/product-details/'.$publishedCategoryProduct->id) }}">{{ $$publishedCategoryProduct->productName }}</a></h4>
+                                        <div class="info-product-price">
+                                            <span class="item_price">BDT {{ $$publishedCategoryProduct->productPrice }} </span>
+                                        </div>
+                                        <a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="item-info-product ">
-                        <h4><a href="{{ url('/product-details/'.$publishedCategoryProduct->id) }}">Watches</a></h4>
-                        <div class="info-product-price">
-                            <span class="item_price">BDT {{ $publishedCategoryProduct->productPrice }}</span>
-                            <del>BDT {{ $publishedCategoryProduct->productPrice }}</del>
-                        </div>
-                        <a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>									
-                    </div>
+
+
                 </div>
-            </div>
-            @endforeach
+
 
 
             <div class="clearfix"></div>
