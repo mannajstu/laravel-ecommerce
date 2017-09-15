@@ -238,7 +238,7 @@
                                                     <a href="{{ url('/product-details/'.$publishedCategoryProduct->id) }}" class="link-product-add-cart">Quick View</a>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                         <div class="item-info-product ">
                                             <h4><a href=" {{ url('/product-details/'.$publishedCategoryProduct->id) }}">{{ $publishedCategoryProduct->productName }}</a></h4>

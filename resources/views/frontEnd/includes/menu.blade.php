@@ -20,12 +20,6 @@
                             <li class="dropdown menu__item">
                                 <a href="{{ url('/category-view/'.$publishedCategory->id) }}" class="dropdown-toggle menu__link"> {{ $publishedCategory->categoryName }} </a>
                             </li>
-                            <li class="dropdown menu__item">
-                                <a href="{{ url('/category-view/'.$publishedCategory->id) }}" class="dropdown-toggle menu__link"> {{ $publishedCategory->categoryName }} </a>
-                            </li>
-                            <li class="dropdown menu__item">
-                                <a href="{{ url('/category-view/'.$publishedCategory->id) }}" class="dropdown-toggle menu__link"> {{ $publishedCategory->categoryName }} </a>
-                            </li>
                             
                            
                            
