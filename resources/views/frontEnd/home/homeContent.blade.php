@@ -4,21 +4,20 @@
 
 <div class="banner-grid">
     <div id="visual">
+
         <div class="slide-visual">
             <!-- Slide Image Area (1000 x 424) -->
-            <ul class="slide-group">
-                <li><img class="img-responsive" src="{{ asset('public/frontEnd/images/ba1.jpg') }}" alt="Dummy Image" /></li>
-                <li><img class="img-responsive" src="{{ asset('public/frontEnd/images/ba2.jpg') }}" alt="Dummy Image" /></li>
-                <li><img class="img-responsive" src="{{ asset('public/frontEnd/images/ba3.jpg') }}" alt="Dummy Image" /></li>
+            <ul class="slide-group" >
+                @foreach($publishedHomeSliders as $publishedHomeSlider)
+
+
+                <li><img class="img-responsive"  src="{{$publishedHomeSlider->sliderImage}}" alt="Dummy Image" /></li>
+                @endforeach
             </ul>
 
             <!-- Slide Description Image Area (316 x 328) -->
             <div class="script-wrap">
-                <ul class="script-group">
-                    <li><div class="inner-script"><img class="img-responsive" src="{{ asset('public/frontEnd/images/baa1.jpg') }}" alt="Dummy Image" /></div></li>
-                    <li><div class="inner-script"><img class="img-responsive" src="{{ asset('public/frontEnd/images/baa2.jpg') }}" alt="Dummy Image" /></div></li>
-                    <li><div class="inner-script"><img class="img-responsive" src="{{ asset('public/frontEnd/images/baa3.jpg') }}" alt="Dummy Image" /></div></li>
-                </ul>
+
                 <div class="slide-controller">
                     <a href="#" class="btn-prev"><img src="{{ asset('public/frontEnd/images/btn_prev.png') }}" alt="Prev Slide" /></a>
                     <a href="#" class="btn-play"><img src="{{ asset('public/frontEnd/images/btn_play.png') }}" alt="Start Slide" /></a>
