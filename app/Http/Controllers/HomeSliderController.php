@@ -22,11 +22,17 @@ class HomeSliderController extends Controller {
 //return $request->all();
         $sliderImage = $request->file('sliderImage');
         $name = $sliderImage->getClientOriginalName();
-        $uploadPath = 'public/sliderImage/';
-        $sliderImage->move($uploadPath, $name);
-        $imageUrl = $uploadPath . $name;
-        $this->saveHomeSliderInfo($request, $imageUrl);
-        return redirect('/slider/add')->with('message', 'HomeSlider info save sauccessfully');
+
+
+
+
+		    $uploadPath = 'public/sliderImage/';
+		    $sliderImage->move($uploadPath, $name);
+		    $imageUrl = $uploadPath . $name;
+		    $this->saveHomeSliderInfo($request, $imageUrl);
+		    return redirect('/slider/add')->with('message', 'HomeSlider info save sauccessfully');
+	    
+
     }
 
     protected function saveHomeSliderInfo($request, $imageUrl) {
