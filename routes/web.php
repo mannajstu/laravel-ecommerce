@@ -64,9 +64,9 @@ Route::group(['middleware' => 'AuthenticateMiddleware'], function () {
     Route::post('/slider/save', 'HomeSliderController@storeHomeSlider');
     Route::get('/slider/manage', 'HomeSliderController@manageHomeSlider');
     Route::get('/slider/view/{id}', 'HomeSliderController@viewHomeSlider');
-    Route::get('/slider/edit/{id}', 'ProductController@editHomeSlider');
-    Route::post('/slider/update', 'ProductController@updateHomeSlider');
-    Route::get('/slider/delete/{id}', 'ProductController@deleteHomeSlider');
+    Route::get('/slider/edit/{id}', 'HomeSliderController@editHomeSlider');
+    Route::post('/slider/update', 'HomeSliderController@updateHomeSlider');
+    Route::get('/slider/delete/{id}', 'HomeSliderController@deleteHomeSlider');
     
     
     Route::get('/user/manage', 'UserController@manageUser');
