@@ -31,7 +31,7 @@ class HomeSliderController extends Controller {
 		    $imageUrl = $uploadPath . $name;
 		    $this->saveHomeSliderInfo($request, $imageUrl);
 		    return redirect('/slider/add')->with('message', 'HomeSlider info save sauccessfully');
-	    
+
 
     }
 
