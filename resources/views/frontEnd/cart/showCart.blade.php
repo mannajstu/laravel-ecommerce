@@ -65,13 +65,15 @@ Category
                 <?php } else if ($customerId != null) { ?>
                     <a href="{{ url('/checkout/shipping') }}"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Checkout</a>                
                 <?php } else { ?>
-                    <a href="{{ url('/checkout') }}"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Checkout</a>                
+                    <a href="{{ url('/checkout') }}">Checkout   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>                
                 <?php } ?>
             </div>
             <div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
                 <h4>Shopping basket</h4>
                 <ul>
-                    <li>Total <i>-</i> <span>TK. {{ $total }}</span></li>
+                    <li>Tax <i>-</i> <span>TK. {{ Cart::tax() }}</span></li>
+                    <li>Total Without Tax <i>-</i> <span>TK. {{ $total }}</span></li>
+                    <li>Gross Total <i>-</i> <span>TK. {{ Cart::total() }}</span></li>
                     <?php
                     Session::put('orderTotal', $total);
                     ?>

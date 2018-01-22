@@ -16,6 +16,7 @@ Route::get('/category-view/{id}', 'WelcomeController@category');
 Route::get('/product-details/{id}', 'WelcomeController@productDetails');
 Route::post('/cart/add', 'CartController@addToCart');
 Route::get('/cart/show', 'CartController@showCart');
+Route::get('/cart/destory', 'CartController@destoryCart');
 Route::get('/cart/delete/{id}', 'CartController@deleteCartProduct');
 
 Route::get('/checkout', 'CheckoutController@index');
@@ -25,6 +26,7 @@ Route::post('/checkout/save-shipping', 'CheckoutController@saveShippingInfo');
 Route::get('/checkout/payment', 'CheckoutController@showPaymentForm');
 Route::post('/checkout/save-order', 'CheckoutController@saveOrderInfo');
 Route::get('/checkout/my-home', 'CheckoutController@customerHome');
+Route::get('/search', 'WelcomeController@productSearchDetails');
 
 Auth::routes();
 Route::get('/dashboard', 'HomeController@index');

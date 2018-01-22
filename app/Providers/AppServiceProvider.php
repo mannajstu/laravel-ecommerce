@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
         View::share('name', 'bitm');
         
-        View::composer('frontEnd.includes.menu', function ($view) {
+        View::composer('frontEnd.*', function ($view) {
             $publishedCategories = Category::where('publicationStatus', 1)->get();
             $view->with('publishedCategories', $publishedCategories);
         });

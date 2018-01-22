@@ -22,6 +22,10 @@ class CartController extends Controller
         $cartProducts = Cart::content();
         return view('frontEnd.cart.showCart', ['cartProducts'=>$cartProducts]);
     }
+    public function destoryCart() {
+         Cart::destroy();
+        return redirect('/cart/show');
+    }
     public function deleteCartProduct($id) {
         Cart::remove($id);
         return redirect('/cart/show');

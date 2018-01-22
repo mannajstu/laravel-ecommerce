@@ -5,6 +5,7 @@ use App\HomeSlider;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
+
 class WelcomeController extends Controller
 {
     public function index() {
@@ -27,6 +28,15 @@ class WelcomeController extends Controller
     public function productDetails($id) {
         $productById=Product::where('id', $id) ->first();
          return view('frontEnd.product.productContent', ['productById'=>$productById]);
+    }
+    public function productSearchDetails(Request $request) {
+        $inputText=$request->input('inputtext');
+        $categoryid=$request->input('categoryid');
+        $product= Product::all();
+        return $product[0]->productName;
+//        if(strpos($product->productName,$inputText)!== false){
+//            return $inputText;
+//        }
     }
     
 }
