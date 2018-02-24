@@ -15,13 +15,25 @@
             <a href="{{ url('/dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
         </li>
         <li>
+            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Manage User <span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <a href="{{ url('/user/add') }}"> Add User </a>
+                </li>
+                <li>
+                    <a href="{{ url('/user/manage') }}"> Manage User </a>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
+        <li>
             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Home Silder <span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="{{ url('/slider/add') }}"> Add User </a>
+                    <a href="{{ url('/slider/add') }}"> Add Slider </a>
                 </li>
                 <li>
-                    <a href="{{ url('/slider/manage') }}"> Manage User </a>
+                    <a href="{{ url('/slider/manage') }}"> Manage Slider </a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->

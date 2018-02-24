@@ -51,6 +51,7 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'role' => 'required|max:255',
         ]);
     }
 
@@ -62,11 +63,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $roles = implode(",", $data['role']);
         return User::create([
             'name' => $data['name'],
             'address' => $data['address'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'role' => $roles,
         ]);
     }
 }

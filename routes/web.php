@@ -72,6 +72,6 @@ Route::group(['middleware' => 'AuthenticateMiddleware'], function () {
     
     
     Route::get('/user/manage', 'UserController@manageUser');
-    
+     Route::get('/user/edit/{id}', 'UserController@editUser');
     
 });

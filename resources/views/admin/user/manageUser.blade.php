@@ -11,6 +11,7 @@
         <tr>
             <th>ID</th>
             <th>User Id</th>
+            <th>User Role</th>
             <th>User Name</th>
             <th>Address</th>
             <th>Email</th>
@@ -23,14 +24,15 @@
         <tr>
             <td>{{ $i++ }}</td>
             <td>{{ $user->id }}</td>
+            <td>{{ $user->role }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->address }}</td>
             <td>{{ $user->email }}</td>
             <td>
-                <a href="" class="btn btn-success">
+                <a href="{{url('/user/edit/'.$user->id)}}" class="btn btn-success">
                     <span class="glyphicon glyphicon-edit"></span>
                 </a>
-                <a href="" class="btn btn-danger">
+                <a href="{{url('/user/delete/'.$user->id)}}" class="btn btn-danger" onclick="return confirm('Are You Sure To Delete This');">
                     <span class="glyphicon glyphicon-trash"></span>
                 </a>
             </td>
