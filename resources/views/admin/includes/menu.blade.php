@@ -12,7 +12,21 @@
             <!-- /input-group -->
         </li>
         <li>
-            <a href="{{ url('/dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+           @foreach($users as $user)
+           @if(strpos($user->role, 'admin') !== false && Auth::user()->id ==$user->id)
+           
+            <li>
+            <a href="{{ url('/dashboard') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Dashboard <span class="fa arrow"></span></a>
+            
+           
+        </li>
+           
+           
+           
+           @endif
+           @endforeach
+            
+            
         </li>
         <li>
             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Manage User <span class="fa arrow"></span></a>

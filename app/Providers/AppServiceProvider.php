@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use View;
 use App\Category;
+use App\User;
 
 class AppServiceProvider extends ServiceProvider
 
@@ -21,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
         View::composer('frontEnd.*', function ($view) {
             $publishedCategories = Category::where('publicationStatus', 1)->get();
             $view->with('publishedCategories', $publishedCategories);
+        });
+        View::composer('admin.*', function ($view) {
+            $user = User::all();
+            $view->with('users', $user);
         });
     }
 

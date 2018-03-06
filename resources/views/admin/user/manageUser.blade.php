@@ -4,8 +4,8 @@
 <hr/>
 <h3 class="text-center text-success">{{ Session::get('message') }}</h3>
 <hr/>
-<h2>Total {{ $users->total() }} users</h2>
-<h3>{{  $users->count() }} in this page</h3>
+<h2>Total {{ $userDetail->total() }} users</h2>
+<h3>{{  $userDetail->count() }} in this page</h3>
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -20,7 +20,7 @@
     </thead>
     <tbody>
         <?php $i=1; ?>
-        @foreach ($users as $user)
+        @foreach ($userDetail as $user)
         <tr>
             <td>{{ $i++ }}</td>
             <td>{{ $user->id }}</td>
@@ -42,6 +42,6 @@
 </table>
 <hr/>
 <div>
-     {{ $users->links() }}
+     {{ $userDetail->links() }}
 </div>
 @endsection

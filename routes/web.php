@@ -73,5 +73,9 @@ Route::group(['middleware' => 'AuthenticateMiddleware'], function () {
     
     Route::get('/user/manage', 'UserController@manageUser');
      Route::get('/user/edit/{id}', 'UserController@editUser');
+     Route::post('/user/update', 'UserController@updateUser');
+     Route::get('/user/add', 'UserController@addUser');
+     Route::post('/user/add', 'UserController@storeUser');
+      Route::get('/user/delete/{id}', 'UserController@deleteUser');
     
 });
