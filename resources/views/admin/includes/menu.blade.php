@@ -12,22 +12,21 @@
             <!-- /input-group -->
         </li>
         <li>
-           @foreach($users as $user)
-           @if(strpos($user->role, 'admin') !== false && Auth::user()->id ==$user->id)
-           
-            <li>
+
+
+        <li>
             <a href="{{ url('/dashboard') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Dashboard <span class="fa arrow"></span></a>
-            
-           
+
+
         </li>
-           
-           
-           
-           @endif
-           @endforeach
-            
-            
+
+
+
+
+
+
         </li>
+        @if(strpos(Auth::user()->role, 'admin' )!== false)
         <li>
             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Manage User <span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
@@ -40,6 +39,7 @@
             </ul>
             <!-- /.nav-second-level -->
         </li>
+        
         <li>
             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Home Silder <span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
@@ -88,17 +88,14 @@
             </ul>
             <!-- /.nav-second-level -->
         </li>
+        @endif
+        
+        
         <li>
-            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-        </li>
-        <li>
-            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-        </li>
-        <li>
-            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-wrench fa-fw"></i> Customer Panel<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="panels-wells.html">Panels and Wells</a>
+                    <a href="panels-wells.html">Profile</a>
                 </li>
                 <li>
                     <a href="buttons.html">Buttons</a>

@@ -1,4 +1,5 @@
 @extends('admin.master')
+
 @section('content')
 <hr/>
 

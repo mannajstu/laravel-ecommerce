@@ -50,7 +50,11 @@
                 <!-- /.navbar-static-side -->
             </nav>
             <div id="page-wrapper">
+                
+                @if(strpos(Auth::user()->role, 'admin' )!== false)
                 @yield('content')
+                @endif
+                
                 <!-- /.row -->
             </div>
             <!-- /#page-wrapper -->

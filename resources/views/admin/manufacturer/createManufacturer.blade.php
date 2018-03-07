@@ -1,4 +1,6 @@
 @extends('admin.master')
+@foreach($users as $user)
+        @if(strpos($user->role, 'admin') !== false && Auth::user()->id ==$user->id)
 @section('content')
 
 <hr/>
@@ -48,3 +50,5 @@
 
 
 @endsection
+@endif
+        @endforeach
